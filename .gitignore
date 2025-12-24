@@ -1,0 +1,21 @@
+# ignore python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ignore environment files
+.venv/
+venv/
+env/
+
+# ignore build artifacts
+build/
+dist/
+*.spec
+
+# ignore vscode settings
+.vscode/
+
+# ignore stupid OS junk nobody cares about
+.DS_Store
