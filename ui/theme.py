@@ -39,7 +39,7 @@ def _configure_frame_style(style: ttk.Style, panel_bg: str) -> None:
 def _configure_label_style(style: ttk.Style, panel_bg: str, fg: str, font_family: str, font_size: int) -> None:
     style.configure(
         'TLabel',
-        # background = panel_bg,
+        background = panel_bg,
         foreground = fg,
         font = (
             font_family,

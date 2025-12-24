@@ -37,6 +37,9 @@ class YWARApp:
         
         # building the main UI layout
         self._build_layout(CONFIG)
+
+        # binding the keyboard shortcuts from config to individual functions
+        self._bind_keys(CONFIG)
     
     def _configure_window(self) -> None:
         """
@@ -191,15 +194,32 @@ class YWARApp:
         )
         self.undo_button.pack(side = tk.LEFT, padx = 6)
     
+    def _bind_keys(self, config: dict) -> None:
+        """
+        Binds keyboard shortcuts from config to app actions.
+        """
+        controls = config['controls']
+
+        # complete task shortcuts
+        self.root.bind(f'<{controls['complete_task_1']}>', self._on_complete_task)
+        self.root.bind(f'<{controls['complete_task_2']}>', self._on_complete_task)
+        # TODO: resolve space behavior when a button is selected at the same time as it is pressed
+
+        # skip task shortcuts
+        self.root.bind(f'<{controls['skip_task']}>', self._on_skip_task)
+
+        # undo task shortcuts
+        self.root.bind(f'<{controls['undo_task']}>', self._on_undo_task)
+    
     # --- placeholder callback methods ---
     # TODO: define once further functionality exists
-    def _on_complete_task(self) -> None:
+    def _on_complete_task(self, event = None) -> None:
         print('Complete task pressed')
     
-    def _on_skip_task(self) -> None:
+    def _on_skip_task(self, event = None) -> None:
         print('Skip task pressed')
     
-    def _on_undo_task(self) -> None:
+    def _on_undo_task(self, event = None) -> None:
         print('Undo task pressed')
     
     
