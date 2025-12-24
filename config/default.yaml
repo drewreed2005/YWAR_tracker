@@ -1,0 +1,63 @@
+app:
+  title: "YWAR Tracker"
+  version: "0.1.0"
+
+
+window:
+  width: 1100
+  height: 700
+  min_width: 900
+  min_height: 600
+  resizable: true
+  fullscreen: false
+
+
+ui:
+  theme: "light"
+  padding:
+    small: 6
+    medium: 10
+    large: 14
+
+  font:
+    family: "TkDefaultFont"
+    monospace_family: "TkFixedFont"
+    size: 11
+    header_size: 14
+    timer_size: 16
+
+
+themes:
+  light:
+    background: "#FFFFFF"
+    foreground: "#000000"
+    panel_bg: "#F2F2F2"
+    accent: "#4FA3FF"
+    highlight: "#E6F1FF"
+    border: "#C8C8C8"
+  
+  dark:
+    background: "#1E1E1E"
+    foreground: "#EAEAEA"
+    panel_bg: "#2A2A2A"
+    accent: "#4FA3FF"
+    highlight: "#2F4A6D"
+    border: "#3C3C3C"
+
+
+layout:
+  left_column_weight: 1
+  right_column_weight: 1
+
+
+controls:
+  complete_task_1: "Return"
+  complete_task_2: "space"
+  skip_task: "Right"
+  undo_task: "BackSpace"
+
+
+timer:
+  enabled: true
+  auto_start: false
+  precision_ms: true
